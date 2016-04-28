@@ -3,9 +3,7 @@ package pagemodules.pages;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import ru.yandex.qatools.allure.annotations.Step;
 
 import static com.codeborne.selenide.CollectionCondition.empty;
@@ -132,9 +130,13 @@ public class TodoMVC {
 
     @Step
     public static SelenideElement startEdit(String oldTaskText, String newTaskText) {
-        tasks.find(exactText(oldTaskText)).     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        doubleClick(tasks.find(exactText(oldTaskText)).find("label"));
 
         return tasks.find(cssClass("editing")).find(".edit").val(newTaskText);
+    }
+
+    public static void doubleClick(WebElement element){
+        actions().doubleClick(element).perform();
     }
 
     @Step
@@ -165,7 +167,8 @@ public class TodoMVC {
 
     @Step
     public static void delete(String taskText) {
-        tasks.find(exactText(taskText)).hover().$(".destroy").click();
+        tasks.find(exactText(taskText)).hover();
+        tasks.find(exactText(taskText)).$(".destroy").click();
     }
 
     @Step
