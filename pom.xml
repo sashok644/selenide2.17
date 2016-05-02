@@ -51,9 +51,8 @@
                             <value>ru.yandex.qatools.allure.junit.AllureRunListener</value>
                         </property>
                     </properties>
-                    <test>qa.test.${suite}</test>
                     <systemPropertyVariables>
-                        <webdriver.chrome.driver>C:\chromedriver_win32</webdriver.chrome.driver>
+                        <webdriver.chrome.driver>C://chromedriver_win32//chromedriver.exe</webdriver.chrome.driver>
                         <driver.browser>${driver.browser}</driver.browser>
                     </systemPropertyVariables>
                 </configuration>
@@ -65,9 +64,6 @@
                     </dependency>
                 </dependencies>
             </plugin>
-
-
-
         </plugins>
     </build>
 
