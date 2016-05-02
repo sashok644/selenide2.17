@@ -3,9 +3,9 @@ package pagemodules;
 import org.junit.Test;
 import org.openqa.selenium.Keys;
 
-import static pagemodules.pages.TodoMVC.TaskType.ACTIVE;
-import static pagemodules.pages.TodoMVC.TaskType.COMPLETED;
-import static pagemodules.pages.TodoMVC.*;
+import static pages.TodoMVC.TaskType.ACTIVE;
+import static pages.TodoMVC.TaskType.COMPLETED;
+import static pages.TodoMVC.*;
 
 /**
  * Created by 64 on 24.02.2016.

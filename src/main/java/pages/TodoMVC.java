@@ -1,9 +1,8 @@
-package pagemodules.pages;
+package pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import ru.yandex.qatools.allure.annotations.Step;
 
 import static com.codeborne.selenide.CollectionCondition.empty;
@@ -11,7 +10,8 @@ import static com.codeborne.selenide.CollectionCondition.exactTexts;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.url;
-import static pagemodules.pages.TodoMVC.TaskType.ACTIVE;
+import static helpers.Helpers.doubleClick;
+import static pages.TodoMVC.TaskType.ACTIVE;
 /**
  * Created by 64 on 31.03.2016.
  */
@@ -133,10 +133,6 @@ public class TodoMVC {
         doubleClick(tasks.find(exactText(oldTaskText)).find("label"));
 
         return tasks.find(cssClass("editing")).find(".edit").val(newTaskText);
-    }
-
-    public static void doubleClick(WebElement element){
-        actions().doubleClick(element).perform();
     }
 
     @Step
